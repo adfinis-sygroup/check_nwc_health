@@ -1,4 +1,4 @@
-package Classes::Bluecat::Component::HaSubsystem;
+package Classes::Bluecat::AddressManager::Component::HaSubsystem;
 our @ISA = qw(Monitoring::GLPlugin::SNMP::Item);
 use strict;
 use constant { OK => 0, WARNING => 1, CRITICAL => 2, UNKNOWN => 3 };
@@ -7,7 +7,7 @@ sub init {
   my ($self) = @_;
   if ($self->mode =~ /device::ha::status/) {
     $self->get_snmp_tables('BAM-SNMP-MIB', [
-      ["replications", "replicationStatusTable", 'Classes::Bluecat::Component::HaSubsystem::Replication'],
+      ["replications", "replicationStatusTable", 'Classes::Bluecat::AddressManager::Component::HaSubsystem::Replication'],
     ]);
     $self->get_snmp_objects('BAM-SNMP-MIB', (qw(
         queueSize replication
@@ -54,7 +54,7 @@ sub check {
   }
 }
 
-package Classes::Bluecat::Component::HaSubsystem::Replication;
+package Classes::Bluecat::AddressManager::Component::HaSubsystem::Replication;
 our @ISA = qw(Monitoring::GLPlugin::SNMP::TableItem);
 use strict;
 
