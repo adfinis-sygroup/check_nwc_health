@@ -189,7 +189,7 @@ sub check {
         if (exists $as_numbers->{$as}) {
           my $num_peers = scalar(@{$as_numbers->{$as}->{peers}});
           my $num_ok_peers = scalar(grep { $_->{aristaBgp4V2PeerFaulty} == 0 } @{$as_numbers->{$as}->{peers}});
-          my $num_admdown_peers = scalar(grep { $_->{aristaBgp4V2PeerAdminStatus} eq "stop" } @{$as_numbers->{$as}->{peers}});
+          my $num_admdown_peers = scalar(grep { $_->{aristaBgp4V2PeerAdminStatus} eq "halted" } @{$as_numbers->{$as}->{peers}});
           $as_numbers->{$as}->{availability} = 100 * $num_ok_peers / $num_peers;
           $self->set_thresholds(warning => "100:", critical => "50:");
           $self->add_message($self->check_thresholds($as_numbers->{$as}->{availability}),
@@ -235,8 +235,13 @@ sub finish {
   ##$self->{aristaBgp4V2PeerLocalAddr} = $self->mibs_and_oids_definition(
   ##    'INET-ADDRESS-MIB', 'InetAddress',
   ##    $self->{aristaBgp4V2PeerLocalAddr}, $self->{aristaBgp4V2PeerType}) if $self->{aristaBgp4V2PeerLocalAddr};
-  $self->{aristaBgp4V2PeerLocalAddr} = "999.999.999.999" if ! $self->{aristaBgp4V2PeerLocalAddr};
-
+  # save a valid localaddr and reuse it if empty, works for 5 attempts
+  $self->protect_value("localaddr_".$self->{aristaBgp4V2PeerRemoteAddr},
+      "aristaBgp4V2PeerLocalAddr", sub {
+      my $value = shift;
+      return $value ? 1 : 0;
+  });
+  $self->{aristaBgp4V2PeerLocalAddr} = "=empty=" if ! $self->{aristaBgp4V2PeerLocalAddr};
   $self->{aristaBgp4V2PeerLastError} |= "00 00";
   my $errorcode = 0;
   my $subcode = 0;
@@ -284,8 +289,11 @@ sub check {
         $self->{aristaBgp4V2PeerState},
         $self->{aristaBgp4V2PeerFsmEstablishedTime}
     );
-  } elsif ($self->{aristaBgp4V2PeerAdminStatus} eq "stop") {
+  } elsif ($self->{aristaBgp4V2PeerAdminStatus} eq "halted" and
+    $self->{aristaBgp4V2PeerLastError} eq "No Error") {
     # admin down is by default critical, but can be mitigated
+    # if there is an error, then the reason for "halted" might be a stop event
+    # or a timeout causing the FSM to stop.
     $self->add_message(
         defined $self->opts->mitigation() ? $self->opts->mitigation() :
             $self->{aristaBgp4V2PeerRemoteAsImportant} ? WARNING : OK,
@@ -299,14 +307,15 @@ sub check {
         $self->{aristaBgp4V2PeerRemoteAsImportant} ? 1 : 0;
   } else {
     # aristaBgp4V2PeerLastError may be undef, at least under the following circumstances
-    # aristaBgp4V2PeerRemoteAsName is "", aristaBgp4V2PeerAdminStatus is "start",
+    # aristaBgp4V2PeerRemoteAsName is "", aristaBgp4V2PeerAdminStatus is "running",
     # aristaBgp4V2PeerState is "active"
     $self->add_message($self->{aristaBgp4V2PeerRemoteAsImportant} ? CRITICAL : OK,
-        sprintf "peer %s (AS%s) state is %s (last error: %s)",
+        sprintf "peer %s (AS%s) state is %s (last error: %s, local address: %s)",
         $self->{aristaBgp4V2PeerRemoteAddr},
         $self->{aristaBgp4V2PeerRemoteAs}.$self->{aristaBgp4V2PeerRemoteAsName},
         $self->{aristaBgp4V2PeerState},
-        $self->{aristaBgp4V2PeerLastError}||"no error"
+        $self->{aristaBgp4V2PeerLastError}||"no error",
+        $self->{aristaBgp4V2PeerLocalAddr}
     );
     $self->{aristaBgp4V2PeerFaulty} = $self->{aristaBgp4V2PeerRemoteAsImportant} ? 1 : 0;
   }

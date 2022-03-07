@@ -18,5 +18,25 @@ sub init {
   } else {
     $self->analyze_and_check_mem_subsystem("Classes::Cisco::CISCOMEMORYPOOLMIB::Component::MemSubsystem");
   }
+  if ($self->implements_mib('CISCO-STACKWISE-MIB') and
+      $self->implements_mib('CISCO-STACKWISE-MIB')) {
+    # bei stacks, bestehend aus mehreren switches, wuenschen sich admins
+    # deren individuelle speichermetriken zu sehen. enhanced-mempool, bzw.
+    # der fallback auf memory-pool, der bei stacks vorkommt, gibt es lediglich
+    # einen globalen wert.
+    # die sind das von solarwinds so gewohnt, welches aber neuerdings nicht
+    # mehr ganz so angesagt ist.
+    #
+    # und gleich wieder der naechste dreck am 27.1.21, bei einem switch wird
+    # 105% usage gemeldet. der stack besteht nur aus einem switch, daher
+    # lassen wir das mit den per-node-memories hier bleiben.
+    $self->get_snmp_tables("CISCO-STACKWISE-MIB", [
+        ['switches', 'cswSwitchInfoTable', 'Classes::Cisco::CISCOSTACKWISEMIB::Component::StackSubsystem::Switch', undef, ["cswSwitchNumCurrent"]],
+    ]);
+    if (scalar(@{$self->{switches}}) > 1) {
+      $self->analyze_and_check_mem_subsystem("Classes::Cisco::CISCOPROCESSMIB::Component::MemSubsystem");
+    }
+    delete $self->{switches};
+  }
 }
 

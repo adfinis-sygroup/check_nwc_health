@@ -1,12 +1,13 @@
-Meet me at...
-=============
-<div><a href="https://monitors2019.consol.de/wiki/doku.php?id=workshop:2019:start" target="_blank"><img src="https://labs.consol.de/assets/images/muenchen-banner.png" alt="Monitoring-Workshop 2019" style="height: auto !important;width: auto !important;" ></a></div>
+Auf meiner Startseite steht:
+
+I will ignore all of your mails unless you give me an ip address and a community/root account. No joke! No exception!
+
+Herrschaften, das ist durchaus ernst gemeint. Freibier ist alle! Und wenn ich eine Mail zur Kenntnis nehme, dann bedeutet das immer noch nicht, daß ich für lau eure Arbeit mache. 
 
 Description
 ============
 The plugin check_nwc_health was developed with the aim of having a single tool for all aspects of monitoring of network components.
 
-<div><a href="https://www.buymeacoffee.com/bsNED0Wct" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/black_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a></div>
 
 Motivation
 ==========

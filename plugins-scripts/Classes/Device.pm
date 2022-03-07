@@ -75,6 +75,8 @@ sub classify {
         $self->rebless('Server::WindowsLocal');
       } elsif ($self->{productname} =~ /solarislocal/i) {
         $self->rebless('Server::SolarisLocal');
+      } elsif ($self->{productname} =~ /Bluecat/i) {
+        $self->rebless('Classes::Bluecat');
       } elsif ($self->{productname} =~ /Cisco/i) {
         $self->rebless('Classes::Cisco');
       } elsif ($self->{productname} =~ /fujitsu intelligent blade panel 30\/12/i) {
@@ -111,6 +113,9 @@ sub classify {
         $self->rebless('Classes::Brocade');
       } elsif ($self->{productname} =~ /Fibre Channel Switch/i) {
         $self->rebless('Classes::Brocade');
+      } elsif ($self->{productname} =~ /Pulse Secure.*LLC/i) {
+        # Pulse Secure,LLC,Pulse Policy Secure,IC-6500,5.2R7.1 (build 37645)
+        $self->rebless('Classes::PulseSecure::Gateway');
       } elsif ($self->{productname} =~ /Juniper.*MAG\-\d+/i) {
         # Juniper Networks,Inc,MAG-4610,7.2R10
         $self->rebless('Classes::Juniper');
@@ -123,9 +128,6 @@ sub classify {
         $self->rebless('Classes::Juniper');
       } elsif ($self->{productname} =~ /JunOS/i) {
         $self->rebless('Classes::Juniper');
-      } elsif ($self->{productname} =~ /Pulse Secure.*LLC/i) {
-        # Pulse Secure,LLC,Pulse Policy Secure,IC-6500,5.2R7.1 (build 37645)
-        $self->rebless('Classes::Juniper::IVE');
       } elsif ($self->{productname} =~ /DrayTek.*Vigor/i) {
         $self->rebless('Classes::DrayTek');
       } elsif ($self->implements_mib('NETGEAR-MIB')) {
@@ -195,6 +197,12 @@ sub classify {
       } elsif ($self->implements_mib('PHION-MIB') ||
           $self->{productname} =~ /Barracuda/) {
         $self->rebless('Classes::Barracuda');
+      } elsif ($self->implements_mib('VORMETRIC-MIB')) {
+        $self->rebless('Classes::Vormetric');
+      } elsif ($self->implements_mib('ARUBAWIRED-CHASSIS-MIB')) {
+        $self->rebless('Classes::HP::Aruba');
+      } elsif ($self->implements_mib('DEVICE-MIB') and $self->{productname} =~ /Versa Appliance/) {
+        $self->rebless('Classes::Versa');
       } elsif ($self->{productname} =~ /^Linux/i) {
         $self->rebless('Classes::Server::Linux');
       } else {

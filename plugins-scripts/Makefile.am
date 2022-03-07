@@ -11,6 +11,7 @@ GL_MODULES=\
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/MIB2MIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/SNMPFRAMEWORKMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/ADSLLINEMIB.pm \
+  ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/ADONISDNSMIBMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/AIRESPACESWITCHINGMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/AIRESPACEWIRELESSMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/ALARMMIB.pm \
@@ -18,8 +19,18 @@ GL_MODULES=\
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/ARISTABGP4V2MIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/ARISTAENTITYSENSORMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/ARUBATCMIB.pm \
+  ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/ARUBAWIREDCHASSISMIB.pm \
+  ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/ARUBAWIREDFANTRAYMIB.pm \
+  ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/ARUBAWIREDFANMIB.pm \
+  ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/ARUBAWIREDPOWERSUPPLYMIB.pm \
+  ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/ARUBAWIREDVSFMIB.pm \
+  ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/ARUBAWIREDTEMPSENSORMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/ASYNCOSMAILMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/ATTACKMIB.pm \
+  ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/BAMSNMPMIB.pm \
+  ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/BCNDHCPV4MIB.pm \
+  ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/BCNDNSMIB.pm \
+  ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/BCNSYSTEMMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/BGP4MIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/BIANCABRICKMIBRESMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/BLUECOATAVMIB.pm \
@@ -41,6 +52,7 @@ GL_MODULES=\
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/CISCOIETFNATMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/CISCOIPSECFLOWMONITORMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/CISCOL2L3INTERFACECONFIGMIB.pm \
+  ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/CISCOLICENSEMGMTMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/CISCOLWAPPAPMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/CISCOLWAPPHAMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/CISCOMEMORYPOOLMIB.pm \
@@ -52,11 +64,14 @@ GL_MODULES=\
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/CISCOSBRNDMNGMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/CISCOSBSYSMNGMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/CISCOSBTUNINGMIB.pm \
+  ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/CISCOSMARTLICMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/CISCOSTACKMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/CISCOSTACKWISEMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/CISCOSYSTEMEXTMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/CISCOVTPMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/CLAVISTERMIB.pm \
+  ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/DCBGPMIB.pm \
+  ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/DEVICEMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/DISKMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/ELTEXMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/ENTITYMIB.pm \
@@ -76,6 +91,7 @@ GL_MODULES=\
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/FOUNDRYSNSWL4SWITCHGROUPMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/GENUAMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/HH3CENTITYEXTMIB.pm \
+  ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/HUAWEIBGPVPNMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/HUAWEIENTITYEXTENTMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/HOSTRESOURCESMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/HPICFCHASSIS.pm \
@@ -112,12 +128,14 @@ GL_MODULES=\
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/OPENBSDMEMMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/OPENBSDPFMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/OPENBSDSENSORSMIB.pm \
+  ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/ORGMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/OSPFMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/OSPFV3MIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/PANCOMMONMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/PANPRODUCTSMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/PHIONMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/PROXYMIB.pm \
+  ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/PULSESECUREPSGMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/RAPIDCITYMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/RESOURCEMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/RMONMIB.pm \
@@ -127,12 +145,14 @@ GL_MODULES=\
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/STATISTICSMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/STEELHEADMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/STEELHEADEXMIB.pm \
+  ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/STORAGEMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/SWMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/SYNOPTICSROOTMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/SYSTEMRESOURCESMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/UCDDISKIOMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/UCDSNMPMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/USAGEMIB.pm \
+  ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/VORMETRICMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/VRRPMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/WLSXSYSTEMEXTMIB.pm \
   ../GLPlugin/lib/Monitoring/GLPlugin/SNMP/MibsAndOids/WLSXWLANMIB.pm \
@@ -158,12 +178,23 @@ EXTRA_MODULES=\
   Classes/Bintec/Bibo/Components/CpuSubsystem.pm \
   Classes/Bintec/Bibo.pm \
   Classes/Bintec.pm \
+  Classes/Bluecat/AddressManager/Component/MgmtSubsystem.pm \
+  Classes/Bluecat/AddressManager/Component/MemSubsystem.pm \
+  Classes/Bluecat/AddressManager/Component/HaSubsystem.pm \
+  Classes/Bluecat/AddressManager.pm \
+  Classes/Bluecat/DnsDhcpServer/Component/HaSubsystem.pm \
+  Classes/Bluecat/DnsDhcpServer/Component/ProcessSubsystem.pm \
+  Classes/Bluecat/DnsDhcpServer.pm \
+  Classes/Bluecat.pm \
+  Classes/Cisco/CISCOLICENSEMGMTMIB/Component/KeySubsystem.pm \
+  Classes/Cisco/CISCOSMARTLICMIB/Component/KeySubsystem.pm \
   Classes/Cisco/CISCOBGP4MIB/Components/PeerSubsystem.pm \
   Classes/Cisco/CISCOEIGRPMIB/Components/PeerSubsystem.pm \
   Classes/Cisco/CISCOPORTSECURITYMIB/Component/InterfaceSubsystem.pm \
   Classes/Cisco/OLDCISCOINTERFACESMIB/Component/InterfaceSubsystem.pm \
   Classes/Cisco/CISCOIPSECFLOWMONITOR/Component/VpnSubsystem.pm \
   Classes/Cisco/CISCOENHANCEDMEMPOOLMIB/Component/MemSubsystem.pm \
+  Classes/Cisco/CISCOPROCESSMIB/Component/MemSubsystem.pm \
   Classes/Cisco/CISCOMEMORYPOOLMIB/Component/MemSubsystem.pm \
   Classes/Cisco/CISCOENTITYFRUCONTROLMIB/Component/EnvironmentalSubsystem.pm \
   Classes/Cisco/CISCOENTITYFRUCONTROLMIB/Component/FanSubsystem.pm \
@@ -250,6 +281,7 @@ EXTRA_MODULES=\
   Classes/Fortigate/Component/DiskSubsystem.pm \
   Classes/Fortigate/Component/MemSubsystem.pm \
   Classes/Fortigate/Component/CpuSubsystem.pm \
+  Classes/Fortigate/Component/VpnSubsystem.pm \
   Classes/Fortigate/Component/EnvironmentalSubsystem.pm \
   Classes/Fortigate/Component/SensorSubsystem.pm \
   Classes/Fortigate.pm \
@@ -267,6 +299,7 @@ EXTRA_MODULES=\
   Classes/Huawei/Component/EnvironmentalSubsystem.pm \
   Classes/Huawei/Component/CpuSubsystem.pm \
   Classes/Huawei/Component/MemSubsystem.pm \
+  Classes/Huawei/Component/PeerSubsystem.pm \
   Classes/Huawei/CloudEngine.pm \
   Classes/Huawei.pm \
   Classes/HP/Procurve/Component/MemSubsystem.pm \
@@ -274,6 +307,13 @@ EXTRA_MODULES=\
   Classes/HP/Procurve/Component/EnvironmentalSubsystem.pm \
   Classes/HP/Procurve/Component/SensorSubsystem.pm \
   Classes/HP/Procurve.pm \
+  Classes/HP/Aruba/Component/MemSubsystem.pm \
+  Classes/HP/Aruba/Component/CpuSubsystem.pm \
+  Classes/HP/Aruba/Component/TemperatureSubsystem.pm \
+  Classes/HP/Aruba/Component/FanSubsystem.pm \
+  Classes/HP/Aruba/Component/PowersupplySubsystem.pm \
+  Classes/HP/Aruba/Component/EnvironmentalSubsystem.pm \
+  Classes/HP/Aruba.pm \
   Classes/HP.pm \
   Classes/MEOS.pm \
   Classes/Brocade.pm \
@@ -418,11 +458,17 @@ EXTRA_MODULES=\
   Classes/Lantronix/SLS.pm \
   Classes/Arista/ARISTABGP4V2MIB/Components/PeerSubsystem.pm \
   Classes/Arista/Component/EnvironmentalSubsystem.pm \
+  Classes/Arista/Component/DiskSubsystem.pm \
   Classes/Arista.pm \
   Classes/Riverbed/SteelheadEX/Component/EnvironmentalSubsystem.pm \
   Classes/Riverbed/Steelhead/Component/EnvironmentalSubsystem.pm \
   Classes/Riverbed/Steelhead.pm \
   Classes/Riverbed.pm \
+  Classes/Vormetric/Component/CpuSubsystem.pm \
+  Classes/Vormetric/Component/DiskSubsystem.pm \
+  Classes/Vormetric/Component/EnvironmentalSubsystem.pm \
+  Classes/Vormetric/Component/MemSubsystem.pm \
+  Classes/Vormetric.pm \
   Classes/Lancom/Component/CpuSubsystem.pm \
   Classes/Lancom/Component/EnvironmentalSubsystem.pm \
   Classes/Lancom/Component/MemSubsystem.pm \
@@ -436,6 +482,17 @@ EXTRA_MODULES=\
   Classes/Barracuda/Component/HaSubsystem.pm \
   Classes/Barracuda/Component/FwSubsystem.pm \
   Classes/Barracuda.pm \
+  Classes/Versa/Component/CpuSubsystem.pm \
+  Classes/Versa/Component/EnvironmentalSubsystem.pm \
+  Classes/Versa/Component/MemSubsystem.pm \
+  Classes/Versa/Component/PeerSubsystem.pm \
+  Classes/Versa.pm \
+  Classes/PulseSecure/Gateway/Component/UserSubsystem.pm \
+  Classes/PulseSecure/Gateway/Component/EnvironmentalSubsystem.pm \
+  Classes/PulseSecure/Gateway/Component/CpuSubsystem.pm \
+  Classes/PulseSecure/Gateway/Component/DiskSubsystem.pm \
+  Classes/PulseSecure/Gateway/Component/MemSubsystem.pm \
+  Classes/PulseSecure/Gateway.pm \
   Classes/Device.pm
 
 SED=/bin/sed
